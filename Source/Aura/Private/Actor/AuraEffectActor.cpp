@@ -12,6 +12,7 @@ AAuraEffectActor::AAuraEffectActor()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	//SphereComponent = CreateDefaultSubobject<USphereComponent>("Sphere");
 
 }
 
@@ -41,6 +42,7 @@ void AAuraEffectActor::OnOverlapBegin(UPrimitiveComponent* OverlappedComp, AActo
 			UAuraAttributeSet* MutableAuraAttributeSet = const_cast<UAuraAttributeSet*>(AuraAttributeSet);
 			{
 				MutableAuraAttributeSet->SetHealth(AuraAttributeSet->GetHealth() + 25);
+				MutableAuraAttributeSet->SetHealth(AuraAttributeSet->GetMana() + 70);
 			}
 		}
 	}
